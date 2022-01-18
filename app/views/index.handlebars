@@ -1,13 +1,22 @@
 
 <div class="container-fluid h-100">
 
+        
+    <div style="right: 1%; top:1%; z-index: 10" class="position-absolute">
+
+        <input type="checkbox" class="btn-check" id="inputToggleAccumulated" onclick="toggleAccumulated(this.checked)">
+        <label class="btn btn-outline-light" for="inputToggleAccumulated"><i id="iconToggleAccumulated" class="fas fa-eye"></i></label>
+
+    </div>
+
+
     <div class="row justify-content-center text-center text-white py-3">
 
         <h1 class="text-light mb-3">{{rightDebtor.nameShow}}</h1>
 
-        <div class="col-11 col-lg-4">
+        <div class="col-8 col-lg-4">
             <div class="table-responsive">
-                <table class="table table-bordered text-light">
+                <table class="table table-lg table-bordered text-light">
                     <thead class="align-middle" style="background-color: rgba(69, 69, 69, 0.251);">
                         <tr>
                             <th scope="col" data-bs-toggle="tooltip" title="Total">Total</th>
@@ -24,13 +33,14 @@
 
         <div class="col-12 col-lg-11">
             <div class="table-responsive">
-                <table class="table table-sm table-bordered text-light">
+                <table class="table table-sm table-bordered text-light small">
                     <thead class="align-middle" style="background-color: rgba(69, 69, 69, 0.251);">
                         <tr>
-                            <th scope="col">Data</th>
+                            <th scope="col" class="fieldState0 d-none">Data</th>
+                            <th scope="col" class="fieldState1">Data</th>
                             <th scope="col">Info</th>
                             <th scope="col">Valor</th>
-                            <th scope="col">Acumulado</th>
+                            <th scope="col" class="fieldState0 d-none">Acumul.</th>
                         </tr>
                     </thead>
                     <tbody class="align-middle" style="background-color: rgba(0, 0, 0, 0.5);">
@@ -38,10 +48,11 @@
 
                             <tr class="oneBill">
                                 
-                                <td>{{date}}<input class="d-none" value="{{dateInput}}" disabled></td>
+                                <td class="fieldState0 d-none">{{dateShort}}</td>
+                                <td class="fieldState1">{{dateFull}}</td>
                                 <td>{{info}}</td>
                                 <td class="{{valueAux}}">{{value}}</td>
-                                <td class="{{accumulatedValueAux}}">{{accumulatedValue}}</td>
+                                <td class="{{accumulatedValueAux}} fieldState0 d-none">{{accumulatedValue}}</td>
                             </tr>
 
                         {{/each}}
@@ -52,3 +63,6 @@
         </div>
     </div>
 </div>
+
+<!-- JS-->
+<script src="/js/index.js"></script>

@@ -26,7 +26,9 @@ module.exports = {
                 allBillsDebtor = allBillsDebtor.sort((a, b) => a.date - b.date)
 
                 allBillsDebtor = allBillsDebtor.map((oneBillDate) => {
-                    oneBillDate.date = oneBillDate.date.getDate() + '/' + allMonths[oneBillDate.date.getMonth()] + '/' + oneBillDate.date.getFullYear(); 
+                    oneBillDate.dateFull = (oneBillDate.date.getDate() <= 9 ? '0' + oneBillDate.date.getDate() : oneBillDate.date.getDate()) + '/' + allMonths[oneBillDate.date.getMonth()] + '/' + oneBillDate.date.getFullYear(); 
+                    oneBillDate.dateShort = (oneBillDate.date.getDate() <= 9 ? '0' + oneBillDate.date.getDate() : oneBillDate.date.getDate()) + '/' + (oneBillDate.date.getMonth() < 9 ? '0' + (oneBillDate.date.getMonth() + 1) : oneBillDate.date.getMonth() + 1) + '/' + oneBillDate.date.getFullYear().toString().substring(2); 
+
                     accumulatedValue += oneBillDate.value;
                     
                     oneBillDate.valueAux = oneBillDate.value >= 0 ? 'green': 'red'; 
