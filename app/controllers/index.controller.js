@@ -5,6 +5,8 @@ const allMonths = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','
 
 module.exports = {
 	get: (req, res) => {
+        console.log('##### -- ############## -- #####');
+        console.log('##### --   New Access   -- #####');
 
         Debtor.find().lean().then((allDebtors) => {
             let rightDebtor = {}
@@ -40,15 +42,22 @@ module.exports = {
                     return oneBillDate
                 })
 
+                console.log('##### -- Success: ' + rightDebtor.nameShow + ' -- #####');
+                console.log('##### -- ############## -- #####');
+
                 allBillsDebtor.reverse()
 
                 res.render('index', {title: rightDebtor.nameShow, rightDebtor, allBillsDebtor})
                 
             }).catch((err) => {
+                console.log('##### -- Error: ID -- #####');
+                console.log('##### -- ######### -- #####');
                 console.log(err);
             })
 
         }).catch((err) => {
+            console.log('##### -- Error: NA -- #####');
+            console.log('##### -- ######### -- #####');
             console.log(err);
         })
 
