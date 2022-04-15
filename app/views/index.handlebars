@@ -1,23 +1,29 @@
 
 <div class="container-fluid h-100">
 
+    <div style="left: 1%; top:1%; z-index: 10" class="position-absolute">
+
+        <input type="checkbox" class="btn-check" id="inputToggleColor" onclick="toggleColor(this.checked)">
+        <label class="btn toggle-btn btn-outline-light" for="inputToggleColor"><i class="fas fa-adjust"></i></label>
+
+    </div>
         
     <div style="right: 1%; top:1%; z-index: 10" class="position-absolute">
 
         <input type="checkbox" class="btn-check" id="inputToggleAccumulated" onclick="toggleAccumulated(this.checked)">
-        <label class="btn btn-outline-light" for="inputToggleAccumulated"><i id="iconToggleAccumulated" class="fas fa-eye"></i></label>
+        <label class="btn toggle-btn btn-outline-light" for="inputToggleAccumulated"><i id="iconToggleAccumulated" class="fas fa-eye"></i></label>
 
     </div>
 
 
     <div class="row justify-content-center text-center text-white py-3">
 
-        <h1 class="text-light mb-3">{{rightDebtor.nameShow}}</h1>
+        <h1 class="toggle-color text-color dark mb-3">{{rightDebtor.nameShow}}</h1>
 
         <div class="col-8 col-lg-4">
             <div class="table-responsive">
-                <table class="table table-lg table-bordered text-light">
-                    <thead class="align-middle" style="background-color: rgba(69, 69, 69, 0.251);">
+                <table class="table table-lg table-bordered toggle-color text-color dark">
+                    <thead class="align-middle toggle-color dark">
                         <tr>
                             <th scope="col" data-bs-toggle="tooltip" title="Total">Total</th>
                         </tr>
@@ -33,8 +39,8 @@
 
         <div class="col-12 col-lg-11">
             <div class="table-responsive">
-                <table class="table table-sm table-bordered text-light small">
-                    <thead class="align-middle" style="background-color: rgba(69, 69, 69, 0.251);">
+                <table class="table table-sm table-bordered toggle-color text-color dark small">
+                    <thead class="align-middle toggle-color dark">
                         <tr>
                             <th scope="col" class="fieldState0 d-none">Data</th>
                             <th scope="col" class="fieldState1">Data</th>
@@ -43,7 +49,7 @@
                             <th scope="col" class="fieldState0 d-none">Acumul.</th>
                         </tr>
                     </thead>
-                    <tbody class="align-middle" style="background-color: rgba(0, 0, 0, 0.5);">
+                    <tbody class="align-middle toggle-color dark">
                         {{#each allBillsDebtor}}
 
                             <tr class="oneBill">

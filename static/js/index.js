@@ -27,3 +27,27 @@ function toggleAccumulated(isChecked){
         }
     }
 }
+
+function toggleColor(isChecked){
+    let all = document.getElementsByClassName('toggle-color')
+        allBtn = document.getElementsByClassName('toggle-btn')
+
+    if(isChecked){
+        allBtn[0].classList.replace('btn-outline-light', 'btn-outline-dark')
+        allBtn[1].classList.replace('btn-outline-light', 'btn-outline-dark')
+
+        for(one of all){
+            one.classList.replace('dark', 'light')
+        }
+    }
+    else{
+        allBtn[0].classList.replace('btn-outline-dark', 'btn-outline-light')
+        allBtn[1].classList.replace('btn-outline-dark', 'btn-outline-light')
+
+        for(one of all){
+            one.classList.replace('light', 'dark')
+        }
+        
+
+    }
+}
